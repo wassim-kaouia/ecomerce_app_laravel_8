@@ -11,5 +11,9 @@ Route::get('/', function () {
 
 
 /* Products Routes */
-Route::get('/boutique' , 'App\Http\Controllers\ProductController@index');
-Route::get('/boutique/{id}','App\Http\Controllers\ProductController@show')->name('products.show');
+Route::get('/boutique' , 'App\Http\Controllers\ProductController@index')->name('products.index');
+Route::get('/boutique/{slug}','App\Http\Controllers\ProductController@show')->name('products.show');
+
+
+/* Cart Routes */
+Route::post('/panier/ajouter','App\Http\Controllers\CartController@store')->name('cart.store');

@@ -19,9 +19,9 @@ class ProductController extends Controller
 
 
 
-    public function show($id){
-        // $product = Product::where('slug','$slug')->first();
-        $product = Product::findOrFail($id);
+    public function show($slug){
+        $product = Product::where('slug',$slug)->first();
+        // $product = Product::findOrFail($id);
         // dd($product);
         return view('products.show',['product' => $product]);
 
