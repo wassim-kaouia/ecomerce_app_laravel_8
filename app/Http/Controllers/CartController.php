@@ -15,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        return view('cart.index');
     }
 
     /**
@@ -36,15 +36,24 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->id,$request->title,$request->price);
+        // dd($request->product_id);
         //this is part of shopingcart package - class of the package
+       
 
-        Cart::add($request->id,$request->title,1,$request->price)->associate(Product::class);
+        $duplicata = Cart::search(function ($cartItem, $rowId) use($request){
+            return $cartItem->id == $request->product_id;
+        });
+         
+        if($duplicata->isNotEmpty()){
+            return redirect()->route('products.index')->with('success','le produit a été dèja ajouté !');
+        }
+        
+
+        $product   = Product::findOrFail($request->product_id);
+        Cart::add($product->id,$product->title,1,$product->price)->associate(Product::class);
 
         return redirect()->route('products.index')->with('success','le produit a été bien ajouté !');
 
-
-        
     }
 
     /**
@@ -87,8 +96,10 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($rowid)
     {
-        //
+        Cart::remove($rowid);
+
+        return back()->with('success','le produit a été bien supprimé !');
     }
 }

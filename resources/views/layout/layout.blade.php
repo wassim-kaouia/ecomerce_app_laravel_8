@@ -14,6 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -162,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1">
-        <a class="text-muted" href="#">Panier <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
+        <a class="text-muted" href="{{ route('cart.index') }}">Panier <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
       </div>
       <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="{{ route('products.index') }}"><img src="https://i.dlpng.com/static/png/1310221-png-svg-shopping-png-512_512_preview.png" width="40" alt=""> E-Comerce</a>
@@ -197,13 +198,6 @@ h1, h2, h3, h4, h5, h6 {
       <div class="alert alert-success">{{ session()->get('success') }}</div>
   @endif
 
-  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-    </div>
-  </div>
 
 
   @yield('content')

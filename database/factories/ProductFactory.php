@@ -23,9 +23,9 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'title'       => $this->faker->sentence(15),
+            'title'       => $this->faker->sentence(3),
             'slug'        => $this->faker->slug,
-            'subtitle'    => $this->faker->sentence(10),
+            'subtitle'    => $this->faker->sentence(1),
             'description' => $this->faker->text(200),
             'price'       => $this->faker->numberBetween(15,300)*100,
             'image'       => 'https://via.placeholder.com/200x250',
