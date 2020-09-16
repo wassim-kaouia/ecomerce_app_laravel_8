@@ -8,6 +8,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
     <title> E-comerce App Laravel 8</title>
+    @yield('extra-script')
+    
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
 
@@ -153,6 +155,7 @@ h1, h2, h3, h4, h5, h6 {
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
    
+    
   </head>
 
 
@@ -211,5 +214,7 @@ h1, h2, h3, h4, h5, h6 {
     <a href="#">Back to top</a>
   </p>
 </footer>
+
+@yield('extra-js')
 </body>
 </html>

@@ -21,6 +21,10 @@ Route::get('panier','App\Http\Controllers\CartController@index')->name('cart.ind
 Route::post('/panier/ajouter','App\Http\Controllers\CartController@store')->name('cart.store');
 Route::delete('/panier/{rowid}','App\Http\Controllers\CartController@destroy')->name('cart.destroy');
 
+/* Checkout Routes */
+Route::get('paiment','App\Http\Controllers\CheckoutController@index')->name('checkout.index');
+
+
 
 Route::get('/vider',function(){
     Cart::destroy();

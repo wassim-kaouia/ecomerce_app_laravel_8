@@ -88,7 +88,7 @@
                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale :</strong>
                       <h5 class="font-weight-bold">{{ getPrice(Cart::total()) }}</h5>
                     </li>
-                  </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Passez à la caisse</a>
+                  </ul><a href="{{ route('checkout.index') }}" class="btn btn-dark rounded-pill py-2 btn-block">Passez à la caisse</a>
                 </div>
               </div>
             </div>
