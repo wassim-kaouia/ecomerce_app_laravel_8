@@ -13,6 +13,12 @@ class CheckoutController extends Controller
 
     public function index()
     {
+
+        //si le panier est vide on interdit le client d'aller vers paiment
+        if(Cart::count() <= 0){
+            return redirect()->route('products.index');
+        }
+
         Stripe::setApiKey('sk_test_UjgB7XsExaDQ2QtwUIA5WbpT00ZOjl3nOe');
 
         $intent = \Stripe\PaymentIntent::create([
@@ -38,7 +44,11 @@ class CheckoutController extends Controller
 
     public function store(Request $request)
     {
-        //
+        Cart::destroy();
+
+        $data = $request->json()->all();
+
+        return $data['paymentIntent'];
     }
 
 

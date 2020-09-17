@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
+    @yield('extra-meta')
     <title> E-comerce App Laravel 8</title>
     @yield('extra-script')
     
