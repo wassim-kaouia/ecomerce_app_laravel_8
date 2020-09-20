@@ -59,7 +59,6 @@ class CheckoutController extends Controller
                                         ->setTimestamp($data['paymentIntent']['created'])
                                         ->format('Y-m-d H:i:s');
 
-
         $products = [];
         $i = 0;
 
@@ -101,9 +100,9 @@ class CheckoutController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $rowId)
     {
-        //
+        
     }
 
 

@@ -170,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
         <a class="text-muted" href="{{ route('cart.index') }}">Panier <span class="badge badge-pill badge-dark">{{ Cart::count() }}</span></a>
       </div>
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="{{ route('products.index') }}"><img src="https://i.dlpng.com/static/png/1310221-png-svg-shopping-png-512_512_preview.png" width="40" alt=""> E-Comerce</a>
+        <a class="blog-header-logo text-dark" href="{{ route('products.index') }}"><img src="" width="40" alt=""> E-Comerce</a>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
         <a class="text-muted" href="#" aria-label="Search">
@@ -201,6 +201,10 @@ h1, h2, h3, h4, h5, h6 {
   @if (session()->has('success'))
       <div class="alert alert-success">{{ session()->get('success') }}</div>
   @endif
+
+  @if (session()->has('danger'))
+  <div class="alert alert-danger">{{ session()->get('danger') }}</div>
+@endif
 
 
 

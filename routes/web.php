@@ -19,15 +19,16 @@ Route::get('/boutique/{slug}','App\Http\Controllers\ProductController@show')->na
 /* Cart Routes */
 Route::get('panier','App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/panier/ajouter','App\Http\Controllers\CartController@store')->name('cart.store');
-Route::delete('/panier/{rowid}','App\Http\Controllers\CartController@destroy')->name('cart.destroy');
+Route::patch('/panier/{rowId}','App\Http\Controllers\CartController@update');
+Route::delete('/panier/{rowId}','App\Http\Controllers\CartController@destroy')->name('cart.destroy');
 
 /* Checkout Routes */
-Route::get('paiment','App\Http\Controllers\CheckoutController@index')->name('checkout.index');
-Route::post('paiment','App\Http\Controllers\CheckoutController@store')->name('checkout.store');
+Route::get('/paiment','App\Http\Controllers\CheckoutController@index')->name('checkout.index');
+Route::post('/paiment','App\Http\Controllers\CheckoutController@store')->name('checkout.store');
 Route::get('/merci','App\Http\Controllers\CheckoutController@thankYou')->name('checkout.thanks');
 
 
 
-Route::get('/vider',function(){
-    Cart::destroy();
-});
+// Route::get('/vider',function(){
+//     Cart::destroy();
+// });
